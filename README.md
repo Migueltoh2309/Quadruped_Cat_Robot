@@ -53,4 +53,4 @@ montaje de los servos, y las patas derechas se espejan respecto a las izquierdas
 
 ## Autor
 
-Miguel Olortegui — UTEC
+MiTo Olórtegui Huamán — UTEC
