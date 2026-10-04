@@ -117,10 +117,13 @@ void ik_leg_floating(const float foot_world[3], const float rpy[3], int legID, c
                 base_pos[i];
   }
 
-  // Vector pie respecto al origen de la pierna
+  // Vector pie respecto al origen de la pierna, en el marco del cuerpo
+  // (R^T * (pie - origen)): la pierna gira con el cuerpo
   float p_leg[3];
   for (int i = 0; i < 3; i++) {
-    p_leg[i] = foot_world[i] - origin[i];
+    p_leg[i] = R[0][i] * (foot_world[0] - origin[0]) +
+               R[1][i] * (foot_world[1] - origin[1]) +
+               R[2][i] * (foot_world[2] - origin[2]);
   }
 
   // Solo plano X-Z
